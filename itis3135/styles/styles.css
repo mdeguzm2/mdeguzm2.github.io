@@ -1,0 +1,30 @@
+/* Base styles */
+body {
+    font-family: Tahoma, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #453F42; 
+    color: #DEE5C7;
+}
+
+header, main, footer {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #CCE56D; 
+}
+
+/* Links */
+a {
+    color: #FFD294; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E5E1DF; 
+}
