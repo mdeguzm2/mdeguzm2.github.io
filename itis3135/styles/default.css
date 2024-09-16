@@ -38,3 +38,8 @@ li {
     text-align: left;
     padding: 2px 10px 2px 10px;
 }
+
+/* Img related */
+figcaption {
+    color: #B6BCAE;
+}
