@@ -1,16 +1,16 @@
 :root {
-    --lavender-web: #eae8ff;      /* Lavender Web */
-    --platinum: #d8d5db;          /* Platinum */
-    --french-gray: #adacb5;       /* French Gray */
-    --gunmetal: #2d3142;          /* Gunmetal */
-    --uranian-blue: #b0d7ff;      /* Uranian Blue */
+    --lavender-web: #eae8ff;
+    --platinum: #d8d5db;
+    --french-gray: #adacb5;
+    --gunmetal: #2d3142;
+    --uranian-blue: #b0d7ff;
 }
 
 /* Base styles */
 body {
     font-family: Tahoma, sans-serif;
-    color: var(--lavender-web);   /* Light text color */
-    background-color: var(--gunmetal); /* Dark background */
+    color: var(--lavender-web);
+    background-color: var(--gunmetal);
     text-align: center;
 }
 
@@ -28,7 +28,7 @@ main p {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--uranian-blue);   /* Bright contrast for headings */
+    color: var(--uranian-blue);
 }
 
 /* Other */
@@ -38,12 +38,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Links */
 a {
-    color: var(--platinum);        /* Platinum for links */
+    color: var(--platinum);
     text-decoration: underline;
 }
 
 a:hover {
-    color: var(--uranian-blue);    /* Uranian Blue on hover */
+    color: var(--uranian-blue);
 }
 
 .contract {
@@ -58,7 +58,7 @@ li {
 
 /* Img related */
 figcaption {
-    color: var(--platinum);        /* Platinum for captions */
+    color: var(--platinum);
 }
 
 .selfie {
@@ -69,17 +69,41 @@ figcaption {
 
 /* Tables */
 table, td, th {
-    border: 1px solid var(--lavender-web); /* Lavender Web border for tables */
+    border: 1px solid var(--lavender-web);
     margin-left: auto;
     margin-right: auto;
 }
 
 .top, .category {
-    background-color: var(--french-gray); /* French Gray for table headers */
-    color: var(--gunmetal);            /* Light text for headers */
+    background-color: var(--french-gray);
+    color: var(--gunmetal);
 }
 
 .complex tr:nth-child(even) {
-    background-color: var(--platinum);      /* Platinum for alternating rows */
-    color: var(--gunmetal);                  /* Darker text for readability */
+    background-color: var(--platinum);
+    color: var(--gunmetal);
+}
+
+/* Form Styles */
+input, select {
+    background-color: var(--platinum);
+    color: var(--gunmetal);
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid var(--lavender-web);
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--gunmetal);
+    color: var(--lavender-web);
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--uranian-blue);
 }
