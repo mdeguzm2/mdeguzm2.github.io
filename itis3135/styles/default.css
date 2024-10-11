@@ -74,12 +74,12 @@ table, td, th {
     margin-right: auto;
 }
 
-tr.top, td.category {
+.top, .category {
     background-color: var(--french-gray); /* French Gray for table headers */
     color: var(--gunmetal);            /* Light text for headers */
 }
 
-table.complex tr:nth-child(even) {
+.complex tr:nth-child(even) {
     background-color: var(--platinum);      /* Platinum for alternating rows */
     color: var(--gunmetal);                  /* Darker text for readability */
 }
