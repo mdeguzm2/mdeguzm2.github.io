@@ -1,9 +1,16 @@
+:root {
+    --lavender-web: #eae8ff;      /* Lavender Web */
+    --platinum: #d8d5db;          /* Platinum */
+    --french-gray: #adacb5;       /* French Gray */
+    --gunmetal: #2d3142;          /* Gunmetal */
+    --uranian-blue: #b0d7ff;      /* Uranian Blue */
+}
+
 /* Base styles */
 body {
     font-family: Tahoma, sans-serif;
-    color: #333;
-    background-color: #453F42; 
-    color: #DEE5C7;
+    color: var(--lavender-web);   /* Light text color */
+    background-color: var(--gunmetal); /* Dark background */
     text-align: center;
 }
 
@@ -21,23 +28,22 @@ main p {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    color: #CCE56D; 
+    color: var(--uranian-blue);   /* Bright contrast for headings */
 }
-
 
 /* Other */
 .certification {
- font-style: italic;
+    font-style: italic;
 }
 
 /* Links */
 a {
-    color: #FFD294; 
+    color: var(--platinum);        /* Platinum for links */
     text-decoration: underline;
 }
 
 a:hover {
-    color: #E5E1DF; 
+    color: var(--uranian-blue);    /* Uranian Blue on hover */
 }
 
 .contract {
@@ -52,11 +58,28 @@ li {
 
 /* Img related */
 figcaption {
-    color: #B6BCAE;
+    color: var(--platinum);        /* Platinum for captions */
 }
 
 .selfie {
     max-width: 30%;
     max-height: 30%;
     border-radius: 50%;
+}
+
+/* Tables */
+table, td, th {
+    border: 1px solid var(--lavender-web); /* Lavender Web border for tables */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr.top, td.category {
+    background-color: var(--french-gray); /* French Gray for table headers */
+    color: var(--gunmetal);            /* Light text for headers */
+}
+
+table.complex tr:nth-child(even) {
+    background-color: var(--platinum);      /* Platinum for alternating rows */
+    color: var(--gunmetal);                  /* Darker text for readability */
 }
