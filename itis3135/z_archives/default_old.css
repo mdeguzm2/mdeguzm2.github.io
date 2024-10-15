@@ -1,0 +1,77 @@
+/* Base styles */
+body {
+    font-family: Tahoma, sans-serif;
+    color: #333;
+    background-color: #453F42; 
+    color: #DEE5C7;
+    text-align: center;
+}
+
+header, main, footer {
+    text-align: center;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main p {
+    text-align: justify;
+    text-align-last: left;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #CCE56D; 
+}
+
+
+/* Other */
+.certification {
+ font-style: italic;
+}
+
+/* Links */
+a {
+    color: #FFD294; 
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #E5E1DF; 
+}
+
+.contract {
+    font-style: italic;
+}
+
+/* Lists */
+li {
+    text-align: left;
+    padding: 2px 10px 2px 10px;
+}
+
+/* Img related */
+figcaption {
+    color: #B6BCAE;
+}
+
+.selfie {
+    max-width: 30%;
+    max-height: 30%;
+    border-radius: 50%;
+}
+
+/* Tables */
+table, td, th {
+    border: 1px solid #DEE5C7;
+    margin-left: auto;
+    margin-right: auto;
+}
+tr.top, td.category {
+    background-color: #3a3537;
+    color: #DEE5C7;
+}
+table.complex tr:nth-child(even) {
+    background-color: #6b6167;
+    color: #9EB359;
+}

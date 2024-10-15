@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tables</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="styles/default.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div data-include="components/header.html"></div>
+		<main>
+			<h2>HTML Tables</h2>
+            <h3>My Tabular Data</h3>
+            <ol>
+                <li>James Anderson james.anderson@email.com 6</li>
+                <li>Emily Johnson emily.johnson@yahoo.com 3</li>
+                <li>Michael Smith michael.smith@companymail.com 12</li>
+                <li>Sarah Brown sarah.brown@gmail.com 8</li>
+                <li>David Wilson david.wilson@businessmail.com 10</li>
+                <li>Amanda Davis amanda.davis@enterprise.com 4</li>
+                <li>Jessica Miller jessica.miller@corporate.com 15</li>
+            </ol>
+            <h3>Employee Data in Simple Table</h3>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Years of Service</th>
+                </tr>
+                <tr>
+                    <td>James Anderson</td>
+                    <td>james.anderson@email.com</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Emily Johnson</td>
+                    <td>emily.johnson@yahoo.com</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Michael Smith</td>
+                    <td>michael.smith@companymail.com</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Sarah Brown</td>
+                    <td>sarah.brown@gmail.com</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>David Wilson</td>
+                    <td>david.wilson@businessmail.com</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Amanda Davis</td>
+                    <td>amanda.davis@enterprise.com</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Jessica Miller</td>
+                    <td>jessica.miller@corporate.com</td>
+                    <td>15</td>
+                </tr>                
+            </table>
+            <h3>Employee Data in Complex Table</h3>
+            <figure>
+                <table class="complex">
+                    <tr class="top">
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Years of Service</th>
+                        <th>Monthly Salary</th>
+                    </tr>
+                    <tr>
+                        <td class="category">Project Manager</td>
+                        <td>James Anderson</td>
+                        <td>james.anderson@email.com</td>
+                        <td>6</td>
+                        <td>$10,000</td>
+                    </tr>
+                    <tr>
+                        <td class="category" rowspan="2">Software Developer</td>
+                        <td>Emily Johnson</td>
+                        <td>emily.johnson@yahoo.com</td>
+                        <td>3</td>
+                        <td>$7,000</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Smith</td>
+                        <td>michael.smith@companymail.com</td>
+                        <td>12</td>
+                        <td>$8,000</td>
+                    </tr>
+                    <tr>
+                        <td class="category" rowspan="2">Marketing Specialist</td>
+                        <td>Sarah Brown</td>
+                        <td>sarah.brown@gmail.com</td>
+                        <td>8</td>
+                        <td>$6,500</td>
+                    </tr>
+                    <tr>
+                        <td>David Wilson</td>
+                        <td>david.wilson@businessmail.com</td>
+                        <td>10</td>
+                        <td>$7,000</td>
+                    </tr>
+                    <tr>
+                        <td class="category" rowspan="2">Graphic Designer</td>
+                        <td>Amanda Davis</td>
+                        <td>amanda.davis@enterprise.com</td>
+                        <td>4</td>
+                        <td>$7,500</td>
+                    </tr>
+                    <tr>
+                        <td>Jessica Miller</td>
+                        <td>jessica.miller@corporate.com</td>
+                        <td>15</td>
+                        <td>$8,000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total Years of Service/Monthly Salary</td>
+                        <td>59</td>
+                        <td>$54,000</td>
+                    </tr>
+                </table>
+                <figcaption>Employee Information</figcaption>  
+            </figure>  
+		</main>
+		<div data-include="components/footer.html"></div>
+		<script src="scripts/HTMLInclude.min.js"></script>
+	</body>
+</html>
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Forms</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="styles/default.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div data-include="components/header.html"></div>
+		<main>
+			<h2>Our Contact Form</h2>
+			<form id="contact-form" action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name"><br><br>
+        
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+        
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address"><br><br>
+        
+                <fieldset>
+                    <legend>Preferred Contact Method:</legend>
+                    <input type="radio" id="email-contact" name="contact" value="email" required>
+                    <label for="email-contact">Email</label><br>
+                    <input type="radio" id="phone-contact" name="contact" value="phone">
+                    <label for="phone-contact">Phone</label><br>
+                </fieldset><br>
+        
+                <fieldset>
+                    <legend>Interests:</legend>
+                    <input type="checkbox" id="service1" name="interest" value="service1">
+                    <label for="service1">Service 1</label><br>
+                    <input type="checkbox" id="service2" name="interest" value="service2">
+                    <label for="service2">Service 2</label><br>
+                    <input type="checkbox" id="service3" name="interest" value="service3">
+                    <label for="service3">Service 3</label><br>
+                </fieldset><br>
+        
+                <label for="dropdown">How did you hear about us?</label>
+                <select id="dropdown" name="referral" required>
+                    <option value="">Select an option</option>
+                    <option value="friend">Friend</option>
+                    <option value="social-media">Social Media</option>
+                    <option value="advertisement">Advertisement</option>
+                    <option value="search-engine">Search Engine</option>
+                </select><br><br>
+        
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </form>
+		</main>
+		<div data-include="components/footer.html"></div>
+		<script src="scripts/HTMLInclude.min.js"></script>
+	</body>
+</html>
+
+
