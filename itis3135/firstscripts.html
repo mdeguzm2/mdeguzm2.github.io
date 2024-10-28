@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>First Scripts</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="styles/default.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div data-include="components/header.html"></div>
+		<main>
+			<h2>First Scripts</h2>
+            <h3 id="date-time"></h3>
+            <div class="input-container">
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <input type="text" id="mood" placeholder="How are you feeling?" required>
+                <button id="greet-button">Greet Me!</button>
+            </div>
+            <div class="input-container">
+                <input type="number" id="favorite-number" placeholder="Enter a number (0-10)" required min="0">
+                <button id="polygon-button">Check Polygon</button>
+            </div>
+            <h3 id="greeting"></h3>
+		</main>
+		<div data-include="components/footer.html"></div>
+		<script src="scripts/HTMLInclude.min.js"></script>
+        <script src="scripts/defaultscripts.js"></script>
+	</body>
+</html>
+
+
