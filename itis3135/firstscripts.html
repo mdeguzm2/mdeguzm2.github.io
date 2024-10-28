@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="styles/default.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+        <script src="scripts/defaultscripts.js"></script>
 	</head>
 	<body>
 		<div data-include="components/header.html"></div>
@@ -21,11 +22,21 @@
                 <input type="number" id="favorite-number" placeholder="Enter a number (0-10)" required min="0">
                 <button id="polygon-button">Check Polygon</button>
             </div>
-            <h3 id="greeting"></h3>
+            <h4 id="greeting"></h4>
+            <h3>Modern Dodo Functions:</h3>
+            <div class="input-container">
+                <button id="dodo-location">Where is the dodo?</button>
+                <button id="item-stock">How many items are in stock?</button>
+                <button id="order-status">Check order status</button>
+            </div>
+            <div class="input-container">
+                <input type="text" id="review" placeholder="Enter your review here.">
+                <button id="review-submit">Submit</button>
+            </div>
 		</main>
 		<div data-include="components/footer.html"></div>
 		<script src="scripts/HTMLInclude.min.js"></script>
-        <script src="scripts/defaultscripts.js"></script>
+        
 	</body>
 </html>
 

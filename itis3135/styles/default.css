@@ -169,3 +169,9 @@ button:hover {
     max-width: 1000px;
     margin-bottom: 16px; 
 }
+
+#review {
+    width: 100%;
+    max-width: 1000px;
+    margin: 16px;
+}
