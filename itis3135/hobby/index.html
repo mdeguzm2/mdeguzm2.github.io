@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
         <title>PC Building Hobby Site</title>
         <style>
             :root {
@@ -28,7 +29,7 @@
                 text-align: center;
             }
 
-            header h1 {
+            h1 {
                 margin: 0;
             }
 
@@ -55,8 +56,9 @@
                 display: none;
             }
 
-            section h2 {
+            h2 {
                 color: var(--rose-taupe);
+                text-align: center;
             }
 
             footer {
@@ -276,23 +278,6 @@
                     Responsive Web Design
                 </a>
             </p>
-            <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html">
-                <img style="border:0;width:88px;height:31px"
-                src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!">
-            </a>
-            <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css">
-                <img style="border:0;width:88px;height:31px;" 
-                src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
-            </a>
-            <a href="https://wave.webaim.org/report#/" id="validation_link_disability"> 
-                <img style="border:0;width:88px;height:31px" 
-                src="images/button_validation_wcag-2.png" alt="Valid Disabiliy/Accessibility Design!">
-            </a>
-            <script>
-                document.getElementById("validation_link_html").setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
-                document.getElementById("validation_link_disability").setAttribute("href","https://wave.webaim.org/report#/" + location.href);
-                document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-            </script>   
         </footer>
         <script>
             const sections = document.querySelectorAll('main section');
