@@ -3,6 +3,16 @@ const addCourseButton = document.getElementById("add-course");
 const resetButton = introForm.querySelector('input[type="reset"]');
 const resultContainer = document.getElementById("result-form");
 
+function loadImage() {
+    const image = document.getElementById("image").files[0];
+    const imageCaption = document.getElementById("image-caption").value; // Moved here to get the latest value
+    if (image) {
+        const imageUrl = URL.createObjectURL(image);
+        const text = `<img src="${imageUrl}" alt="${imageCaption}">`;
+        document.getElementById('loadImage').innerHTML = text;
+    }
+}
+
 function resetFormDisplay() {
     introForm.reset();
     introForm.style.display = "block";
@@ -12,7 +22,6 @@ function resetFormDisplay() {
 function submitForm() {
     const name = document.getElementById("name").value;
     const mascot = document.getElementById("mascot").value;
-    const image = document.getElementById("image").value;
     const imageCaption = document.getElementById("image-caption").value;
     const personalBackground = document.getElementById("personal-background").value;
     const professionalBackground = document.getElementById("professional-background").value;
@@ -22,32 +31,31 @@ function submitForm() {
     const courses = Array.from(document.getElementsByClassName("course")).map((course) => course.value);
     const funnyThing = document.getElementById("funny-thing").value;
     const anythingElse = document.getElementById("anything-else").value;
-
     introForm.style.display = "none";
     resultContainer.innerHTML = `
-      <h2>Introduction</h2>
-      <h3>${name}'s "${mascot}"</h3>
-      <figure>
-          <img src="${image}" class="pfp" alt="${imageCaption}">
-          <figcaption>${imageCaption}</figcaption>
-      </figure>
-      <ul>
-          <li><b>Personal Background: </b>${personalBackground}</li>
-          <li><b>Professional Background: </b>${professionalBackground}</li>
-          <li><b>Academic Background: </b>${academicBackground}</li>
-          <li><b>Background in Web Development: </b>${webDevBackground}</li>
-          <li><b>Primary Computer Platform: </b>${computerPlatform}</li>
-          <li><b>Courses I'm Taking: </b>
-              <ul>
-                  ${courses.map((course) => `<li><b>${course}</b></li>`).join("")}
-              </ul>
-          </li>
-          <li><b>Funny/Interesting Item about Yourself: </b>${funnyThing}</li>
-          <li><b>Anything Else: </b>${anythingElse}</li>
-      </ul>
-      <button id="restart-form">Fill Out the Form Again</button>
+        <h2>Introduction</h2>
+        <h3>${name}'s "${mascot}"</h3>
+        <figure>
+            <div id="loadImage"></div> <!-- Load image here -->
+            <figcaption>${imageCaption}</figcaption>
+        </figure>
+        <ul>
+            <li><b>Personal Background: </b>${personalBackground}</li>
+            <li><b>Professional Background: </b>${professionalBackground}</li>
+            <li><b>Academic Background: </b>${academicBackground}</li>
+            <li><b>Background in Web Development: </b>${webDevBackground}</li>
+            <li><b>Primary Computer Platform: </b>${computerPlatform}</li>
+            <li><b>Courses I'm Taking: </b>
+                <ul>
+                    ${courses.map((course) => `<li><b>${course}</b></li>`).join("")}
+                </ul>
+            </li>
+            <li><b>Funny/Interesting Item about Yourself: </b>${funnyThing}</li>
+            <li><b>Anything Else: </b>${anythingElse}</li>
+        </ul>
+        <button id="restart-form">Fill Out the Form Again</button>
     `;
-
+    loadImage();
     document.getElementById("restart-form").addEventListener("click", resetFormDisplay);
 }
 
@@ -73,5 +81,6 @@ introForm.addEventListener("submit", (event) => {
     event.preventDefault();
     submitForm();
 });
+
 addCourseButton.addEventListener("click", addCourse);
 resetButton.addEventListener("click", resetFormDisplay);
