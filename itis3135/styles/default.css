@@ -159,3 +159,13 @@ button:hover {
     background-color: var(--uranian-blue);
 }
 
+#intro-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#intro-form input[type="text"] {
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 16px; 
+}

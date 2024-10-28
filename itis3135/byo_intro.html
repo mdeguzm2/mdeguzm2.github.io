@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>BYO Intro</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="styles/default.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div data-include="components/header.html"></div>
+		<main>
+			<h2>BYO Intro</h2>
+			<h3>Time to BYO Intro page, please fill out the form below so we can create your own page.</h3>
+            <form id="intro-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Matthew Deguzman" required>            
+                <label for="mascot">Mascot:</label>
+                <input type="text" id="mascot" name="mascot" placeholder="Modern Dodo" required>
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" required>
+                <label for="image-caption">Image Caption:</label>
+                <input type="text" id="image-caption" name="image-caption" placeholder="Selfie of me" required>
+                <label for="personal-background">Personal Background:</label>
+                <input type="text" id="personal-background" name="personal-background" placeholder="Your Personal Background" required>
+                <label for="professional-background">Professional Background:</label>
+                <input type="text" id="professional-background" name="professional-background" placeholder="Your Professional Background" required>
+                <label for="academic-background">Academic Background:</label>
+                <input type="text" id="academic-background" name="academic-background" placeholder="Junior, senior, etc." required>
+                <label for="web-dev-background">Background in Web Development:</label>
+                <input type="text" id="web-dev-background" name="web-dev-background" placeholder="Web-dev related skills, etc." required>
+                <label for="computer-platform">Primary Computer Platform:</label>
+                <input type="text" id="computer-platform" name="computer-platform" placeholder="Windows, Mac, etc." required>
+                <label>Courses Currently Taking:</label>
+                <div id="courses">
+                    
+                </div>
+                <button type="button" id="add-course">Add Course</button>
+                <label for="funny-thing">Funny thing?</label>
+                <input type="text" id="funny-thing" name="funny-thing" placeholder="Enter a funny thing about yourself (optional)">
+                <label for="anything-else">Anything else?</label>
+                <input type="text" id="anything-else" name="anything-else" placeholder="Enter anything else about yourself (optional)">
+                <label>
+                  <input type="checkbox" id="agree" name="agree" required>
+                  I understand that what is on this page is not password protected, and I will not put anything here that I don’t want publicly available.
+                </label>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+              </form>
+              <div id="result-form"></div>
+              <script src="scripts/survey.js"></script>
+		</main>
+		<div data-include="components/footer.html"></div>
+		<script src="scripts/HTMLInclude.min.js"></script>
+	</body>
+</html>
+
+
