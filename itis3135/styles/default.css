@@ -125,7 +125,7 @@ button {
     color: var(--lavender-web);
     font-size: 16px;
     padding: 10px 15px;
-    border: none;
+    border: 2px solid var(--lavender-web);
     border-radius: 4px;
     cursor: pointer;
 }
