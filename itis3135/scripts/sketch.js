@@ -109,52 +109,6 @@ const rects = (pg,w) => {
   pg.rect(0,0,w,w);
 };
 
-function setup() {
-  createCanvas(800, 800,WEBGL);
-  background(20);
-	
-	noStroke();
-	  
-  pg = createGraphics(width, height);
-  imageInit(pg);
-  
-  pg2 = createGraphics(width, height);
-  imageInit(pg2);
-  
-  pg3 = createGraphics(width, height);
-  imageInit(pg3);
-  
-  pg4 = createGraphics(width, height);
-  imageInit(pg4);
-  
-  color0 = randColor('#F3EEEA');
-  theShader1 = createShader(shader1.vs, shader1.fs);
-  theShader2 = createShader(shader1.vs, fragGlitch);
-  
-  const n = 100;
-  translate(-width/2,-height/2);
-  
-  widthGridPg1(pg,10);
-  
-  widthGrid(pg2,n,0.5);
-  widthGrid(pg3,10,0.7);
-  widthStripe(pg4,n,0.5);
-  
-  shader(theShader1);
-  theShader1.setUniform(`u_tex`, pg);
-  theShader1.setUniform(`u_tex2`, pg2);
-  theShader1.setUniform(`u_tex3`, pg3);
-  theShader1.setUniform(`u_tex4`, pg4);
-  theShader1.setUniform('u_color', color0);
-  theShader1.setUniform(`u_time`, frameCount / 200);
-  rect(0,0,width,height);
-    
-  resetShader();
-  tex = get(0,0,width,height);
-  describe('Glitch animation of a randomly generated grid pattern.');
-	
-}
-
 // =======================================
 // shader周り
 // =======================================
@@ -233,7 +187,6 @@ const shader1 = {
 `
 };
 
-
 const fragGlitch =`
   precision highp float;
   precision highp int;
@@ -266,3 +219,48 @@ const fragGlitch =`
   }
 `;
 
+function setup() {
+  createCanvas(800, 800,WEBGL);
+  background(20);
+	
+	noStroke();
+	  
+  pg = createGraphics(width, height);
+  imageInit(pg);
+  
+  pg2 = createGraphics(width, height);
+  imageInit(pg2);
+  
+  pg3 = createGraphics(width, height);
+  imageInit(pg3);
+  
+  pg4 = createGraphics(width, height);
+  imageInit(pg4);
+  
+  color0 = randColor('#F3EEEA');
+  theShader1 = createShader(shader1.vs, shader1.fs);
+  theShader2 = createShader(shader1.vs, fragGlitch);
+  
+  const n = 100;
+  translate(-width/2,-height/2);
+  
+  widthGridPg1(pg,10);
+  
+  widthGrid(pg2,n,0.5);
+  widthGrid(pg3,10,0.7);
+  widthStripe(pg4,n,0.5);
+  
+  shader(theShader1);
+  theShader1.setUniform(`u_tex`, pg);
+  theShader1.setUniform(`u_tex2`, pg2);
+  theShader1.setUniform(`u_tex3`, pg3);
+  theShader1.setUniform(`u_tex4`, pg4);
+  theShader1.setUniform('u_color', color0);
+  theShader1.setUniform(`u_time`, frameCount / 200);
+  rect(0,0,width,height);
+    
+  resetShader();
+  tex = get(0,0,width,height);
+  describe('Glitch animation of a randomly generated grid pattern.');
+	
+}
