@@ -4,8 +4,6 @@ let theShader1;
 let theShader2;
 let tex;
 
-
-
 function draw() {
   translate(-width/2,-height/2);
   
