@@ -262,5 +262,4 @@ function setup() {
   resetShader();
   tex = get(0,0,width,height);
   describe('Glitch animation of a randomly generated grid pattern.');
-	
 }
