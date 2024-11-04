@@ -4,6 +4,111 @@ let theShader1;
 let theShader2;
 let tex;
 
+
+
+function draw() {
+  translate(-width/2,-height/2);
+  
+  // 遅延処理、描画より速く読み込まれることを防ぐ
+  if (frameCount>200){
+    clear();
+    shader(theShader2);
+    theShader2.setUniform(`u_tex`, tex);
+    theShader2.setUniform(`u_time`, frameCount / 200);
+    rect(0,0,width,height);
+  }
+}
+
+/** pgの初期化関数
+ * @function imageInit
+ * @param {p5.Graphics} pg - p5.Graphics
+ */
+const imageInit = (pg) => {
+  pg.rectMode(CENTER);
+  pg.fill("#000000");
+  pg.noStroke();
+};
+
+
+/** num個で分割した格子模様を画面いっぱいに生成する
+* @method widthGrid
+* @param  {p5.Graphics}        pg            レイヤー
+* @param  {Number}        num           画面の分割数
+*/
+const widthGrid = (pg,num,size) => {
+	// openprocessing上で描画がおかしくなるのでそれ対策
+  pg.push();
+	pg.fill(255);
+	pg.rect(0,0,pg.width*2,pg.height*2);
+	pg.fill(0);
+  pg.pop();
+	
+  const w = width/num;
+  const w2 = w*size;
+  for (let i = 0;i<num;i++){
+    for (let j = 0;j<num;j++){
+      pg.push();
+      pg.translate(i*w + w/2, j*w + w/2);
+      pg.rect(0, 0, w2, w2);
+      pg.pop();
+    }
+  }
+};
+
+/** num個で分割した格子模様を画面いっぱいに生成する
+* @method widthGrid
+* @param  {p5.Graphics}        pg            レイヤー
+* @param  {Number}        num           画面の分割数
+*/
+const widthStripe = (pg,num,size) => {
+  pg.push();
+	pg.fill(255);
+	pg.rect(0,0,pg.width*2,pg.height*2);
+	pg.fill(0);
+  pg.pop();
+  
+	const w = width/num;
+  const w2 = w*size;
+    for (let j = 0;j<num;j++){
+      pg.push();
+      pg.translate(0, j*w + w/2);
+      pg.rect(0, 0, pg.width*2, w2);
+      pg.pop();
+  }
+};
+
+/** num個で分割した格子模様を画面いっぱいに生成する
+* @method widthGrid
+* @param  {p5.Graphics}        pg            レイヤー
+* @param  {Number}        num           画面の分割数
+*/
+const widthGridPg1 = (pg,num) => {
+  const w = width/num;
+  
+  for (let i = 0;i<num;i++){
+    for (let j = 0;j<num;j++){
+      if ((i % 2 === 0 && j % 2 === 0) || (i % 2 === 1 && j % 2 === 1)) {
+        if (random(1)<0.5) {
+          pg.fill('#ffffff');
+        } else {
+          pg.fill(220);
+        }
+      } else {
+        if (random(1)<0.5) {
+          pg.fill("#000000");
+        } else {
+          pg.fill("#F3EEEA");
+        }
+      }
+      pg.rect(i*w + w/2, j*w + w/2, w, w);
+    }
+  }
+};
+
+const rects = (pg,w) => {
+  pg.rect(0,0,w,w);
+};
+
 function setup() {
   createCanvas(800, 800,WEBGL);
   background(20);
@@ -11,25 +116,25 @@ function setup() {
 	noStroke();
 	  
   pg = createGraphics(width, height);
-  image_init(pg);
+  imageInit(pg);
   
   pg2 = createGraphics(width, height);
-  image_init(pg2);
+  imageInit(pg2);
   
   pg3 = createGraphics(width, height);
-  image_init(pg3);
+  imageInit(pg3);
   
   pg4 = createGraphics(width, height);
-  image_init(pg4);
+  imageInit(pg4);
   
-  color0 = rand_color('#F3EEEA');
+  color0 = randColor('#F3EEEA');
   theShader1 = createShader(shader1.vs, shader1.fs);
-  theShader2 = createShader(shader1.vs, frag_glith);
+  theShader2 = createShader(shader1.vs, fragGlitch);
   
   const n = 100;
   translate(-width/2,-height/2);
   
-  widthGrid_pg1(pg,10);
+  widthGridPg1(pg,10);
   
   widthGrid(pg2,n,0.5);
   widthGrid(pg3,10,0.7);
@@ -50,114 +155,11 @@ function setup() {
 	
 }
 
-function draw() {
-  translate(-width/2,-height/2);
-  
-  // 遅延処理、描画より速く読み込まれることを防ぐ
-  if(frameCount>200){
-    clear();
-    shader(theShader2);
-    theShader2.setUniform(`u_tex`, tex);
-    theShader2.setUniform(`u_time`, frameCount / 200);
-    rect(0,0,width,height);
-  }
-}
-
-/** pgの初期化関数
- * @function image_init
- * @param {p5.Graphics} pg - p5.Graphics
- */
-const image_init = (pg) => {
-  pg.rectMode(CENTER);
-  pg.fill("#000000");
-  pg.noStroke();
-};
-
-
-/** num個で分割した格子模様を画面いっぱいに生成する
-* @method widthGrid
-* @param  {p5.Graphics}        pg            レイヤー
-* @param  {Number}        num           画面の分割数
-*/
-const widthGrid = (pg,num,size) =>{
-	// openprocessing上で描画がおかしくなるのでそれ対策
-  pg.push();
-	pg.fill(255);
-	pg.rect(0,0,pg.width*2,pg.height*2);
-	pg.fill(0);
-  pg.pop();
-	
-  const w = width/num;
-  const w2 = w*size;
-  for(let i = 0;i<num;i++){
-    for(let j = 0;j<num;j++){
-      pg.push();
-      pg.translate(i*w + w/2, j*w + w/2);
-      pg.rect(0, 0, w2, w2);
-      pg.pop();
-    }
-  }
-}
-
-/** num個で分割した格子模様を画面いっぱいに生成する
-* @method widthGrid
-* @param  {p5.Graphics}        pg            レイヤー
-* @param  {Number}        num           画面の分割数
-*/
-const widthStripe = (pg,num,size) =>{
-  pg.push();
-	pg.fill(255);
-	pg.rect(0,0,pg.width*2,pg.height*2);
-	pg.fill(0);
-  pg.pop();
-  
-	const w = width/num;
-  const w2 = w*size;
-    for(let j = 0;j<num;j++){
-      pg.push();
-      pg.translate(0, j*w + w/2);
-      pg.rect(0, 0, pg.width*2, w2);
-      pg.pop();
-  }
-}
-
-/** num個で分割した格子模様を画面いっぱいに生成する
-* @method widthGrid
-* @param  {p5.Graphics}        pg            レイヤー
-* @param  {Number}        num           画面の分割数
-*/
-const widthGrid_pg1 = (pg,num) =>{
-  const w = width/num;
-  
-  for(let i = 0;i<num;i++){
-    for(let j = 0;j<num;j++){
-      if ((i % 2 === 0 && j % 2 === 0) || (i % 2 === 1 && j % 2 === 1)) {
-        if(random(1)<0.5){
-          pg.fill('#ffffff')
-        }else{
-          pg.fill(220);
-        }
-      }else{
-        if(random(1)<0.5){
-          pg.fill("#000000");
-        }else{
-          pg.fill("#F3EEEA");
-        }
-      }
-      pg.rect(i*w + w/2, j*w + w/2, w, w);
-    }
-  }
-}
-
-const rects = (pg,w) =>{
-  pg.rect(0,0,w,w);
-}
-
 // =======================================
 // shader周り
 // =======================================
   
-const rand_color = (colorCode) => {
+const randColor = (colorCode) => {
     let rc = color(colorCode);
     return [red(rc) / 255.0, green(rc) / 255.0, blue(rc) / 255.0];
 };
@@ -228,11 +230,11 @@ const shader1 = {
     float whiteNoise = (random(uv + mod(0.0, 10.0)) * 2.0 - 1.0) * (0.15 + strength * 0.15);
     gl_FragColor = gl_FragColor + whiteNoise;
   }
-`,
+`
 };
 
 
-const frag_glith =`
+const fragGlitch =`
   precision highp float;
   precision highp int;
 
@@ -263,3 +265,4 @@ const frag_glith =`
     gl_FragColor.b = texture2D(u_tex, uv + vec2(offset(42.0, uv) * 0.03, 0.0)).b;
   }
 `;
+
