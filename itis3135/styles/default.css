@@ -150,3 +150,20 @@ button:hover {
     max-width: 1000px;
     margin: 16px;
 }
+
+/* Header container styling */
+#header-container {
+    margin-bottom: 20px; /* Adds 20px margin to the bottom of the header container */
+}
+
+/* Footer container styling */
+#footer-container {
+    margin-top: 20px; /* Adds 20px margin to the top of the footer container */
+    margin-bottom: 20px; /* Optional: Adds margin to the bottom if needed */
+    margin-left: auto;  /* Centers the footer horizontally */
+    margin-right: auto;  /* Centers the footer horizontally */
+    padding: 20px; /* Optional padding inside the footer container */
+    max-width: 1200px; /* Optional: ensures footer doesn't stretch too wide */
+    width: 95%; /* Makes the footer container responsive */
+    box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
