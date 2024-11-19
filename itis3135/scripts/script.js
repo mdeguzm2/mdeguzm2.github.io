@@ -34,8 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             // Add the generated header to the #header-container div
-            const headerContainer = document.getElementById("header-container");
-            headerContainer.appendChild(header);
+            document.body.insertBefore(header, document.body.firstChild);
         })
         .catch((error) => {  // Wrap the argument in parentheses
             console.error("Error fetching menu:", error);
@@ -93,8 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             // Append the footer to the body
-            const footerContainer = document.getElementById("footer-container");
-            footerContainer.appendChild(footer);
+            document.body.appendChild(footer);
         })
         .catch((error) => {  // Wrap the argument in parentheses
             console.error("Error fetching footer:", error);
