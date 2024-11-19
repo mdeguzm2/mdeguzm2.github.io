@@ -40,11 +40,50 @@ body {
     font-size: 18px;
 }
 
-header, main, footer {
+main {
     text-align: center;
     width: 95%;
     max-width: 1200px;
     margin: 0 auto;
+    flex: 1; /* Pushes the footer to the bottom */
+}
+
+/* Ensure the body and html take up the full height */
+html, body {
+    height: 100%;
+    margin: 0;  /* Remove default margin */
+    display: flex;
+    flex-direction: column;  /* Stack elements vertically */
+}
+
+/* Main content section */
+main {
+    flex-grow: 1;  /* Allow the main content to grow and take up remaining space */
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--gunmetal);  /* Footer background */
+    color: var(--lavender-web);  /* Footer text color */
+    text-align: center;  /* Center footer text */
+    padding: 20px 0;  /* Padding for spacing */
+    margin-top: auto;  /* Push the footer to the bottom */
+}
+
+nav {
+    padding: 10px;
+    
+}
+
+nav:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+nav a {
+    white-space: nowrap;
+    text-decoration: none;
 }
 
 main p {
@@ -151,19 +190,106 @@ button:hover {
     margin: 16px;
 }
 
-/* Header container styling */
-#header-container {
-    margin-bottom: 20px; /* Adds 20px margin to the bottom of the header container */
+/* Slideshow */
+
+/* Slideshow Container */
+.container {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
 }
 
-/* Footer container styling */
-#footer-container {
-    margin-top: 20px; /* Adds 20px margin to the top of the footer container */
-    margin-bottom: 20px; /* Optional: Adds margin to the bottom if needed */
-    margin-left: auto;  /* Centers the footer horizontally */
-    margin-right: auto;  /* Centers the footer horizontally */
-    padding: 20px; /* Optional padding inside the footer container */
-    max-width: 1200px; /* Optional: ensures footer doesn't stretch too wide */
-    width: 95%; /* Makes the footer container responsive */
-    box-sizing: border-box; /* Includes padding and border in the element's total width */
+.my-slides {
+    display: none;
+    position: relative;
+}
+
+.my-slides img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.numbertext {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.caption {
+    padding: 8px;
+    color: white;
+    font-size: 16px;
+    margin-top: 8px;
+    z-index: 2; /* Ensure caption is above image */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    transform: translateY(-50%);
+    z-index: 3; /* Ensure buttons are above the images */
+}
+
+.prev {
+    left: 0;
+    border-radius: 50%; /* Circular button */
+}
+
+.next {
+    right: 0;
+    border-radius: 50%; /* Circular button */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.caption-container {
+    margin: 20px 0;
+    z-index: 1; /* Ensure caption text is above thumbnails */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 0; /* Ensure the row of thumbnails is beneath all other elements */
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.demo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 0; /* Ensure thumbnails are below other elements */
+}
+
+.demo:hover {
+    opacity: 0.7;
+}
+
+/* Ensure thumbnails row is clickable */
+.thumbnail-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

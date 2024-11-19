@@ -13,7 +13,8 @@
                 {"name": "Project Overview", "url": "project_overview.html"},
                 {"name": "BYO Intro", "url": "byo_intro.html"},
                 {"name": "First Scripts", "url": "firstscripts.html"},
-                {"name": "Drawing", "url": "drawing.html"}
+                {"name": "Drawing", "url": "drawing.html"},
+                {"name": "Slideshow Gallery", "url": "slideshow_gallery.html"}
             ]
         },
         {
