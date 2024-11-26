@@ -293,3 +293,7 @@ button:hover {
     justify-content: center;
     margin-top: 20px;
 }
+
+.evalimg {
+    max-width: 50%;
+}

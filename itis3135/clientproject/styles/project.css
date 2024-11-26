@@ -41,13 +41,12 @@ body {
     background-color: var(--dark-charcoal);
     color: var(--lightgrey);
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 18px;
     padding: 20px;
 }
 
 header {
     background-color: var(--teal);
-    color: var(--lightgrey);
     padding: 15px 20px;
     text-align: center;
     font-size: 2rem;
@@ -124,16 +123,16 @@ section {
 
 h1 {
     font-family: 'Arial', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    color: var(--teal);
+    color: var(--lightgrey);
     text-align: center;
     box-sizing: border-box;
 }
 
 h2 {
     font-family: 'Arial', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: var(--teal);
     box-sizing: border-box;

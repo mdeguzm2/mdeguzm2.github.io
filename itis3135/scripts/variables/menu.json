@@ -14,7 +14,9 @@
                 {"name": "BYO Intro", "url": "byo_intro.html"},
                 {"name": "First Scripts", "url": "firstscripts.html"},
                 {"name": "Drawing", "url": "drawing.html"},
-                {"name": "Slideshow Gallery", "url": "slideshow_gallery.html"}
+                {"name": "Slideshow Gallery", "url": "slideshow_gallery.html"},
+                {"name": "Review 1", "url": "review1.html"},
+                {"name": "Review 2", "url": "review2.html"}
             ]
         },
         {
