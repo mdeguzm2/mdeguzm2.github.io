@@ -546,3 +546,7 @@ iframe {
     background: rgba(0, 0, 0, 0.5); /* Darkened overlay behind content */
     z-index: -1; /* Place the overlay behind the content */
 }
+
+#gallery .my-slides .slideshow-image:hover {
+    cursor: pointer;
+}
