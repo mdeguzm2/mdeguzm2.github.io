@@ -479,7 +479,7 @@ figure figcaption {
 
 /* Modal Style */
 .modal {
-    display: none; /* Initially hide the modal */
+    display: none; /* Initially hidden */
     position: fixed;
     top: 0;
     left: 0;
@@ -489,7 +489,6 @@ figure figcaption {
     z-index: 999;
     padding: 0;
     box-sizing: border-box;
-    display: grid;
     place-items: center;
 }
 
