@@ -1,0 +1,26 @@
+{
+    "footerNavLinks": [],
+    "footerText": {
+      "emText": "&copy; 2024 CYCLE Architecture by Nick Anastasi",
+      "designedBy": "Website built by Matthew Deguzman",
+      "certification": ""
+    },
+    "validationImages": {
+      "html": {
+        "url": "https://validator.w3.org/check?uri=",
+        "image": "https://mytienhoang.github.io/itis3135/z_archives/html_validation.png",
+        "alt": "Valid HTML!"
+      },
+      "css": {
+        "url": "https://jigsaw.w3.org/css-validator/check/referer",
+        "image": "https://jigsaw.w3.org/css-validator/images/vcss",
+        "alt": "Valid CSS!"
+      },
+      "wcag": {
+        "url": "https://wave.webaim.org/report#/",
+        "image": "images/button_validation_wcag-2.png",
+        "alt": "Valid Disability/Accessibility Design!"
+      }
+    }
+  }
+  

@@ -1,0 +1,15 @@
+{
+    "title": "CYCLE Architecture",
+    "menus": [
+      {
+        "items": [
+          { "name": "Home", "url": "./" },
+          { "name": "Background", "url": "background.html" },
+          { "name": "Goal", "url": "goal.html" },
+          { "name": "Gallery", "url": "gallery.html" },
+          { "name": "Contact", "url": "contact.html" }
+        ]
+      }
+    ]
+  }
+  

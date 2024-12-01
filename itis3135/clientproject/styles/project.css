@@ -136,6 +136,7 @@ h2 {
     font-weight: bold;
     color: var(--teal);
     box-sizing: border-box;
+    text-align: center;
 }
 
 
@@ -302,4 +303,247 @@ figure figcaption {
     .gallery {
         grid-template-columns: 1fr;
     }
+}
+
+/* Slideshow Container */
+.container {
+    max-width: 800px;
+    margin: 40px auto; /* Center and space out from other sections */
+    background-color: var(--lightgrey); /* Matches other sections */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: var(--dark-charcoal); /* Text color */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    position: relative; /* For positioning prev/next buttons inside */
+}
+
+.my-slides {
+    display: none;
+    position: relative;
+}
+
+.my-slides img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Ensure the images cover the area without scaling */
+}
+
+.numbertext {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    color: var(--lightgrey);
+    font-size: 18px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5); /* Slight background for readability */
+    border-radius: 5px;
+}
+
+.caption {
+    margin-top: 8px;
+    padding: 8px;
+    background-color: var(--teal); /* Highlight the caption area */
+    color: var(--lightgrey);
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    width: auto;
+    padding: 16px;
+    color: var(--lightgrey);
+    font-size: 18px;
+    background-color: var(--dark-charcoal);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transform: translateY(-50%);
+    z-index: 3; /* Ensure buttons are above images */
+    border-radius: 50%; /* Circular buttons for consistency */
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: auto;
+    padding: 16px;
+    color: var(--lightgrey);
+    font-size: 18px;
+    background-color: var(--dark-charcoal);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transform: translateY(-50%);
+    z-index: 3; /* Ensure buttons are above images */
+    border-radius: 50%; /* Circular buttons for consistency */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* For preview thumbnails below the slideshow */
+.caption-container {
+    margin: 20px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.demo {
+    width: 200px; /* Set fixed width */
+    height: 150px; /* Set fixed height */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    object-fit: cover; /* Crop the image to fit the container */
+}
+
+.demo:hover {
+    opacity: 0.7;
+}
+
+/* Gallery Layout with Two Rows (5 images in the first row and 4 in the second) */
+#gallery-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns in the first row */
+    gap: 20px; /* Spacing between images */
+    margin-top: 20px; /* Space above the row */
+}
+
+#gallery-row .image-item {
+    width: 100%; /* Ensures the image fills the column */
+    overflow: hidden; /* Ensures no overflow of images */
+}
+
+#gallery-row img {
+    width: 80%; /* Makes the images smaller (reduce width to 80%) */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners for images */
+    object-fit: cover; /* Crop the image to cover the area */
+    margin: 0 auto; /* Center the image in the container */
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust layout for smaller screens (2 rows) */
+    #gallery-row {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns per row on tablet */
+    }
+
+    #gallery-row img {
+        width: 90%; /* Smaller width for tablet screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjust layout for mobile screens (2 rows) */
+    #gallery-row {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns per row on mobile */
+    }
+
+    #gallery-row img {
+        width: 95%; /* Smaller width for mobile screens */
+    }
+}
+
+/* Second Row with 4 images */
+#gallery-row-second {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns in the second row */
+    gap: 20px; /* Spacing between images */
+    margin-top: 20px; /* Space above the second row */
+}
+
+#gallery-row-second img {
+    width: 80%; /* Makes the images smaller */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners for images */
+    object-fit: cover; /* Crop the image to cover the area */
+    margin: 0 auto; /* Center the image in the container */
+}
+
+/* Modal Style */
+.modal {
+    display: none; /* Initially hide the modal */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Dark translucent background */
+    z-index: 999;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+}
+
+
+.modal-content {
+    position: relative;
+    width: 90%; /* Adjust width to be flexible */
+    max-width: 1700px;
+    height: 80vh; /* Use viewport height for consistent scaling */
+    max-height: 90vh; /* Ensure it doesn't become too tall */
+    background: var(--lightgrey);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#pdf-container {
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: contain; /* Ensure PDF fits proportionally */
+}
+
+/* Close button styles */
+.close {
+    position: absolute;
+    top: -11px;
+    right: 0px;
+    font-size: 2rem;
+    color: #F0047F;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #C0E819;
+}
+
+.overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darkened overlay behind content */
+    z-index: -1; /* Place the overlay behind the content */
 }

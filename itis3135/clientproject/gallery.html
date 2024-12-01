@@ -1,32 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Gallery</title>
-    <link rel="stylesheet" href="styles/project.css">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div data-include="components/headernav.html"></div>
-    <main>
-        <section>
-            <h2>Project Gallery</h2>
-            <p>Will add javascript functionality to click on an image to focus soon.</p>
-            <div class="gallery">
-                <div class="image-item"><img src="images/artboard7.png" alt="Artboard 7"></div>
-                <div class="image-item"><img src="images/artboard8.png" alt="Artboard 8"></div>
-                <div class="image-item"><img src="images/artboard9.png" alt="Artboard 9"></div>
-                <div class="image-item"><img src="images/artboard10.png" alt="Artboard 10"></div>
-                <div class="image-item"><img src="images/artboard11.png" alt="Artboard 11"></div>
-                <div class="image-item"><img src="images/artboard12.png" alt="Artboard 12"></div>
-                <div class="image-item"><img src="images/artboard13.png" alt="Artboard 13"></div>
-                <div class="image-item"><img src="images/artboard14.png" alt="Artboard 14"></div>
-                <div class="image-item"><img src="images/artboard15.png" alt="Artboard 15"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project Gallery</title>
+        <link rel="stylesheet" href="styles/project.css">
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+        <script src="scripts/headerfooter.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <main>
+            <section>
+                <h2>Project Gallery</h2>
+                <div class="container">
+                    <!-- Slideshow Section -->
+                    <div class="my-slides">
+                        <div class="numbertext">1 / 9</div>
+                        <img src="images/artboard7s.png" alt="Diagram 1" class="slideshow-image" data-pdf="files/diagram7.pdf">
+                    </div>
+                    <div class="my-slides">
+                        <div class="numbertext">2 / 9</div>
+                        <img src="images/artboard8s.png" alt="Diagram 2" class="slideshow-image" data-pdf="files/diagram8.pdf">
+                    </div>
+                    <div class="my-slides">
+                        <div class="numbertext">3 / 9</div>
+                        <img src="images/artboard9s.png" alt="Diagram 3" class="slideshow-image" data-pdf="files/diagram9.pdf">
+                    </div>
+                    <div class="my-slides">
+                        <div class="numbertext">4 / 9</div>
+                        <img src="images/artboard10s.png" alt="Diagram 4" class="slideshow-image" data-pdf="files/diagram10.pdf">
+                    </div>
+                    <div class="my-slides">
+                        <div class="numbertext">5 / 9</div>
+                        <img src="images/artboard11s.png" alt="Diagram 5" class="slideshow-image" data-pdf="files/diagram11.pdf">
+                    </div>
+                    <div class="my-slides">
+                        <div class="numbertext">6 / 9</div>
+                        <img src="images/artboard12s.png" alt="Diagram 6" class="slideshow-image" data-pdf="files/diagram12.pdf">
+                    </div>
+                    <div class="my-slides">
+                        <div class="numbertext">7 / 9</div>
+                        <img src="images/artboard13s.png" alt="Diagram 7" class="slideshow-image" data-pdf="files/diagram13.pdf">
+                    </div>
+                    <div class="my-slides">
+                        <div class="numbertext">8 / 9</div>
+                        <img src="images/artboard14s.png" alt="Diagram 8" class="slideshow-image" data-pdf="files/diagram14.pdf">
+                    </div>
+                    <div class="my-slides">
+                        <div class="numbertext">9 / 9</div>
+                        <img src="images/artboard15s.png" alt="Diagram 9" class="slideshow-image" data-pdf="files/diagram15.pdf">
+                    </div>
+    
+                    <!-- Next/Previous Arrows -->
+                    <a class="prev" id="prev">&#10094;</a>
+                    <a class="next" id="next">&#10095;</a>
+    
+                    <!-- Caption Section -->
+                    <div class="caption-container">
+                        <p id="message">Click on the image to view a higher quality PDF.</p>
+                    </div>
+    
+                    <!-- Thumbnail Row -->
+                    <div class="row" id="gallery-row">
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard7s.png" data-slide="1" alt="Diagram 1 Thumbnail">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard8s.png" data-slide="2" alt="Diagram 2 Thumbnail">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard9s.png" data-slide="3" alt="Diagram 3 Thumbnail">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard10s.png" data-slide="4" alt="Diagram 4 Thumbnail">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard11s.png" data-slide="5" alt="Diagram 5 Thumbnail">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard12s.png" data-slide="6" alt="Diagram 6 Thumbnail">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard13s.png" data-slide="7" alt="Diagram 7 Thumbnail">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard14s.png" data-slide="8" alt="Diagram 8 Thumbnail">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/artboard15s.png" data-slide="9" alt="Diagram 9 Thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal Structure -->
+        <div id="pdf-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="pdf-container">
+                    <!-- The PDF will be dynamically embedded here -->
+                </div>
             </div>
-        </section>
-    </main>
-    <div data-include="components/footer.html"></div>
-    <script src="scripts/HTMLInclude.min.js"></script>
-</body>
+        </div>
+
+
+        <script src="scripts/slideshow.js"></script>
+        <!-- Link to the new modal.js -->
+        <script src="scripts/modal.js"></script>
+    </body>
 </html>
