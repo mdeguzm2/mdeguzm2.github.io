@@ -256,13 +256,6 @@ figure figcaption {
     color: var(--lightgrey);
 }
 
-#contact-form button[type="reset"] {
-    background-color: var(--teal);
-}
-
-#contact-form button[type="reset"]:hover {
-    background-color: var(--vivid-pink);
-}
 
 @media (max-width: 768px) {
     #contact-form {
@@ -308,7 +301,7 @@ figure figcaption {
 
 /* Slideshow Container */
 .container {
-    max-width: 800px;
+    max-width: 830px;
     margin: 40px auto; /* Center and space out from other sections */
     background-color: var(--lightgrey); /* Matches other sections */
     border-radius: 8px; /* Rounded corners */
@@ -345,11 +338,8 @@ figure figcaption {
 .caption {
     margin-top: 8px;
     padding: 8px;
-    background-color: var(--teal); /* Highlight the caption area */
-    color: var(--lightgrey);
     text-align: center;
     font-size: 16px;
-    border-radius: 5px;
 }
 
 .prev {
@@ -366,7 +356,7 @@ figure figcaption {
     transition: background-color 0.3s ease;
     transform: translateY(-50%);
     z-index: 3; /* Ensure buttons are above images */
-    border-radius: 50%; /* Circular buttons for consistency */
+    border-radius: 20%; /* Circular buttons for consistency */
 }
 
 .next {
@@ -383,7 +373,7 @@ figure figcaption {
     transition: background-color 0.3s ease;
     transform: translateY(-50%);
     z-index: 3; /* Ensure buttons are above images */
-    border-radius: 50%; /* Circular buttons for consistency */
+    border-radius: 20%; /* Circular buttons for consistency */
 }
 
 .prev:hover, .next:hover {
