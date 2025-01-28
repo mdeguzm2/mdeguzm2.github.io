@@ -136,3 +136,134 @@ footer .social-icons img {
 footer .social-icons img:hover {
     transform: translateY(-3px);
 }
+
+/* Item Containers */
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+.item-container {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+}
+
+ .item-container img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.item-container h3 {
+  font-size: 1.2em;
+  margin: 0 0 5px;
+}
+
+.item-container p {
+  margin: 2px 0;
+  font-size: 0.9em;
+}
+
+.item-detail-container {
+    display: flex;
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto; 
+}
+
+.item-image {
+    flex: 1;
+}
+
+.item-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-info h2 {
+    margin-bottom: 15px;
+}
+
+.item-info p {
+     margin-bottom: 8px;
+}
+
+.button-group {
+     margin-top: 20px;
+}
+
+.button-group button {
+      padding: 10px 15px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ddd;
+      cursor: pointer;
+}
+
+/* New Item Form */
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+ .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input[type="file"] {
+     border:none;
+     padding: 0;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+         background-color: #45a049;
+}
