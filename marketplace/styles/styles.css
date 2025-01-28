@@ -1,10 +1,10 @@
 /* Define Color Variables */
 :root {
-    --primary-color: #396154;
-    --secondary-color: #60897a;
-    --tertiary-color: #c3c9bd;
-    --accent-color: #bfa288;
-    --complementary-color: #967662;
+    --primary-color: #2b2d42ff;
+    --secondary-color: #8d99aeff;
+    --tertiary-color: #edf2f4ff;
+    --accent-color: #ef233cff;
+    --complementary-color: #d80032ff;
 }
 
 /* General Styles */
